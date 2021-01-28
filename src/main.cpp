@@ -43,7 +43,7 @@ void checkSorter ()
 {
   while (Competition.isAutonomous() || Competition.isDriverControl())
   {
-    if (detectSignatureInner(*enemySignatureInner).width > 50)
+    if (detectSignatureInner(*enemySignatureInner).width > 50 && doSort)
     {
       escalator.setSorterDirection(reverse);
     }
@@ -93,6 +93,6 @@ int main() {
 
   thread(checkSorter).detach();
   
-  Competition.drivercontrol(driverControl);
-  Competition.autonomous(autonomousMode);
+  Competition.drivercontrol(rerunProgram);
+  Competition.autonomous(doRerun);
 }

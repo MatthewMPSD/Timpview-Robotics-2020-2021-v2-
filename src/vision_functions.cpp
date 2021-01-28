@@ -3,7 +3,7 @@
 #include "vision_functions.h"
 
 int centerX = 150;
-int centerY = 180;
+int centerY = 160;
 int collectedW = 150;
 int slack = 80;
 
