@@ -29,6 +29,7 @@
 #include "mode_selector.h"
 #include "variables.h"
 #include "strategies.h"
+#include "assert.h"
 
 using namespace vex;
 
@@ -93,6 +94,14 @@ int main() {
 
   thread(checkSorter).detach();
   
-  Competition.drivercontrol(rerunProgram);
-  Competition.autonomous(doRerun);
+  Competition.drivercontrol(driverControl);
+  Competition.autonomous(autonomousMode);
+
+  //Test Mode Switcher
+  // while (true)
+  // {
+  //   Brain.Screen.setCursor(25, 25);
+  //   Brain.Screen.clearScreen();
+  //   Brain.Screen.print(modeSelector.mode());
+  // }
 }
