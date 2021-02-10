@@ -16,4 +16,9 @@ extern signature* enemySignature;
 extern competition Competition;
 extern ModeSelector modeSelector;
 
+
+extern bool hasPressedUp;
+extern timer timePressedUp;
+extern bool doSort;
+
 #endif

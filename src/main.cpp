@@ -29,6 +29,7 @@
 #include "mode_selector.h"
 #include "variables.h"
 #include "strategies.h"
+#include "assert.h"
 
 using namespace vex;
 
@@ -43,7 +44,7 @@ void checkSorter ()
 {
   while (Competition.isAutonomous() || Competition.isDriverControl())
   {
-    if (detectSignatureInner(*enemySignatureInner).width > 50)
+    if (detectSignatureInner(*enemySignatureInner).width > 50 && doSort)
     {
       escalator.setSorterDirection(reverse);
     }
@@ -95,4 +96,12 @@ int main() {
   
   Competition.drivercontrol(driverControl);
   Competition.autonomous(autonomousMode);
+
+  //Test Mode Switcher
+  // while (true)
+  // {
+  //   Brain.Screen.setCursor(25, 25);
+  //   Brain.Screen.clearScreen();
+  //   Brain.Screen.print(modeSelector.mode());
+  // }
 }
