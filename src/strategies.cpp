@@ -187,16 +187,22 @@ void skillsAutonomous ()
   Drivetrain.setDriveVelocity(drivetrainPowerAutoSkills, percent);
   escalator.up();
   intake.inward();
-  driveForTime(forward, 1000, msec);
+
+  //Corner 2
+  driveForTime(forward, 1500, msec);
   shimmy(300, 500, msec, 1);
   Drivetrain.driveFor(reverse, 12, inches);
+
+  //Middle 1
   Drivetrain.turnToHeading(-90, degrees);
-  Drivetrain.driveFor(forward, 48, inches);
+  Drivetrain.driveFor(forward, 54, inches);
   Drivetrain.turnToHeading(0, degrees);
   centerOn(*enemySignature);
   driveForTime(forward, 1000, msec);
   shimmy(300, 500, msec, 1);
   Drivetrain.driveFor(reverse, 24, inches);
+
+  //Corner 2
   Drivetrain.turnToHeading(-90, degrees);
   Drivetrain.driveFor(forward, 42, inches);
   Drivetrain.turnToHeading(-45, degrees);
@@ -204,18 +210,33 @@ void skillsAutonomous ()
   driveForTime(forward, 3, sec);
   shimmy(300, 500, msec, 2);
   Drivetrain.driveFor(reverse, 18, inches);
+
+  //Middle 2
   Drivetrain.turnToHeading(-180, degrees);
-  Drivetrain.driveFor(forward, 36, inches);
+  Drivetrain.driveFor(forward, 42, inches);
   Drivetrain.turnToHeading(-90, degrees);
   centerOn(*enemySignature);
   driveForTime(forward, 1, sec);
   shimmy(300, 500, msec, 1);
   Drivetrain.driveFor(reverse, 12, inches);
+
+  //Corner 3
   Drivetrain.turnToHeading(-180, degrees);
-  Drivetrain.driveFor(forward, 48, inches);
+  Drivetrain.driveFor(forward, 42, inches);
   Drivetrain.turnToHeading(-135, degrees);
   centerOn(*enemySignature);
-  driveForTime(forward, 1, sec);
+  driveForTime(forward, 2, sec);
+  shimmy(300, 500, msec, 3);
+  Drivetrain.driveFor(reverse, 18, inches);
+
+  //Middle 3
+  Drivetrain.turnToHeading(90, degrees);
+  Drivetrain.driveFor(forward, 44, inches);
+  Drivetrain.turnToHeading(180, degrees);
+  centerOn(*enemySignature);
+  driveForTime(forward, 2, sec);
+  shimmy(300, 500, msec, 3);
+  Drivetrain.driveFor(reverse, 18, inches);
 }
 
 void doRerun ()
